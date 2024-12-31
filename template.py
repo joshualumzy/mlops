@@ -2,19 +2,20 @@ import os
 from pathlib import Path
 
 list_of_files = [
-    ".github/workflows/.gitkeep",
-    "src/__init__.py",
+    ".github/workflows/.gitkeep",  # config for CI/CD
+    "src/__init__.py",  # source code
     "src/components/__init__.py",
     "src/components/data_ingestion.py",
     "src/components/data_transformation.py",
     "src/components/model_trainer.py",
     "src/components/model_evaluation.py",
     "src/pipeline/__init__.py",
-    "src/pipeline/training_pipeline.py" "src/pipeline/prediction_pipeline.py",
+    "src/pipeline/training_pipeline.py",
+    "src/pipeline/prediction_pipeline.py",
     "src/utils/__init__.py",
     "src/utils/utils.py",
     "src/logger/logging.py",
-    "src/exception/exception",
+    "src/exception/exception.py",
     "test/unit/__init__.py",
     "test/integration/__init__.py",
     "init_setup.sh",
@@ -23,12 +24,12 @@ list_of_files = [
     "setup.py",
     "setup.cfg",
     "pyproject.toml",
-    "tox.ini",
+    "tox.ini",  # used for testing locally
     "experiment/experiments.ipynb",
 ]
 
 for filepath in list_of_files:
-    filepath = Path(filepath)
+    filepath = Path(filepath)  # make system compatible path
     filedir, filename = os.path.split(filepath)
     if filedir != "":
         os.makedirs(filedir, exist_ok=True)
